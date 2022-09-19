@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Resume / CV</title>
+    <style>
+        html,
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Roboto", sans-serif
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            color: black;
+        }
+
+        main {
+            display: flex;
+            background-color: #f1f1f1;
+            flex-flow: row;
+            justify-content: space-between;
+            width: 98%;
+        }
+
+        /* --------------pre-defined classes and values----------------- */
+        h1 {
+            font-size: 1.6rem;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+
+        .pad-style-1 {
+            padding: 5px;
+        }
+
+        .pad-style-2 {
+            padding: 10px 18px;
+        }
+
+        .pad-style-3 {
+            padding: 15px 24px;
+        }
+
+        .pad-style-4 {
+            padding: 5px 25px;
+        }
+
+        /* --------------------main__-pane---------------------------- */
+
+        .main-info {
+            min-width: 30%;
+            min-height: 100vh;
+            padding: 5px;
+            margin: 5px;
+            box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+        }
+
+        .main-details {
+            display: flex;
+            flex-direction: column;
+            min-width: 70%;
+            min-height: 100vh;
+            margin: 5px;
+            padding: 0;
+        }
+       .main-details p{
+            line-height: 30px;
+       }
+        .img-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .img-section h1 {
+            position: absolute;
+            bottom: 10px;
+            font-weight: normal;
+            left: 30px;
+            color: white;
+        }
+
+
+        .img-section img {
+            width: 90%;
+            display: block;
+            margin: 0 auto;
+            max-height: 600px;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .contact-pane {
+            list-style: none;
+            padding: 0;
+
+        }
+
+        .contact-pane li i {
+            font-size: 1.4rem;
+            color: teal;
+
+        }
+
+        .contact-pane li {
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            color: teal;
+        }
+
+        hr {
+            width: 90%;
+            opacity: 0.5;
+            margin: 0 auto;
+        }
+
+        .photoshop {
+            width: 90%;
+        }
+
+        .photography {
+            width: 70%;
+        }
+
+        .illustrator {
+            width: 40%;
+        }
+
+        .media {
+            width: 50%;
+        }
+
+        .hindi {
+            width: 95%;
+        }
+
+        .english {
+            width: 80%;
+        }
+
+        .html {
+            width: 90%;
+        }
+        .c{
+            width: 76%;
+        }
+        .javascript{
+            width: 60%;
+        }
+        .dsa{
+            width: 30%;
+        }
+
+        .container-for-skills {
+            width: 100%;
+            background-color: #ccc;
+            border-radius: 16px;
+            box-sizing: border-box;
+        }
+
+        h3 {
+            font-weight: normal;
+        }
+
+        .skill-bar {
+            background-color:red;
+            padding: 2px;
+            text-align: center;
+            color: white;
+            box-sizing: border-box;
+            border-radius: 16px;
+        }
+
+        .work-experience,
+        .box {
+            box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%)
+        }
+
+        .work-experience h1 i {
+            font-size: 2.3rem;
+            
+        }
+
+        /* ----------------------------footer----------------------- */
+        footer {
+            background-color: red;
+            color: white;
+            text-align: center;
+            width: 100%;
+            padding: 0;
+            font-size: 2rem;
+            height: 200px;
+            overflow: hidden;
+        }
+        footer a{
+            text-decoration: none;
+            color:white;
+        }
+
+        footer i:hover {
+            opacity: 0.4;
+        }
+
+        footer p {
+            font-size: 1.1rem;
+            padding-top: 20px;
+        }
+
+        /* -------------footer------------------------ */
+        span , .main-details a{
+            background-color: red;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin: 2px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .details {
+            padding: 12px 10px;
+            padding-bottom: 20px;
+
+        }
+
+        .details h2 {
+            font-weight: normal;
+            padding-bottom: 10px;
+            font-size: 1.6rem;
+        }
+
+        .details h3 {
+            font-size: 1.4rem;
+        }
+
+        .details~hr {
+            width: 95%;
+        }
+
+        .details p {
+            color: black;
+            font-size: 1.2rem;
+        }
+
+        .education {
+            margin-top: 10px;
+        }
+
+        /* _________--scroll Bar--_______________ */
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: teal;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* ------------------responsive---------------- */
+        @media screen and (max-width:600px) {
+            main {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            body {
+                margin: 5px;
+                padding: 0;
+            }
+        }
+
+        @media screen and (max-width:850px) {
+
+            .main-info h1 {
+                font-size: 1.4rem;
+            }
+
+            .main-info h3 {
+                font-size: 1rem;
+            }
+
+            .work-experience h1,
+            .education h1 {
+                font-size: 1.2rem;
+            }
+
+            .work-experience h2,
+            .education h2 {
+                font-size: 1.3rem;
+            }
+
+            .work-experience p,
+            .education p {
+                font-size: 1rem;
+            }
+
+            .skill-bar {
+                padding: 2px;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section class="main-info">
+            <div class="img-section">
+                <img src="WhatsApp Image 2022-09-19 at 3.26.56 PM.jpeg" alt="Main Hero Image">
+                <h1>Puneet Chauhan</h1>
+            </div>
+
+            <div class="content-main pad-style-1">
+                <ul class="contact-pane">
+                    <li><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Youtuber / E-Sports Athelete</li>
+                    <li><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Parwanoo, HP</li>
+                    <li><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>punnetkappor643@gmail.com</li>
+                    <li><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i> 88948 83147</li>
+                </ul>
+                <hr>
+                <div class="skillbar pad-style-2">
+                    <h1>Skills</h1>
+
+                    <h3>Designing</h3>
+                    <div class="container-for-skills">
+                        <div class="skill-bar photoshop">90%</div>
+                    </div>
+
+                    <h3>Editing</h3>
+                    <div class="container-for-skills">
+                        <div class="skill-bar photography">60%</div>
+                    </div>
+
+                    <h3>Front End</h3>
+                    <div class="container-for-skills">
+                        <div class="skill-bar illustrator">40%</div>
+                    </div>
+
+
+                    <br>
+                    <h1>Languages</h1>
+
+                    <h3>English</h3>
+                    <div class="container-for-skills">
+                        <div class="skill-bar english" style="padding:0.5rem;"></div>
+                    </div>
+                    <h3>Hindi</h3>
+                    <div class="container-for-skills">
+                        <div class="skill-bar hindi" style="padding:0.5rem;"></div>
+                    </div>
+                    <br>
+                    <h1>Programming Languages</h1>
+                  
+                    <h3>HTML/CSS</h3>
+                    <div class="container-for-skills">
+                        <div class="skill-bar html" style="padding:0.6rem;"></div>
+                    </div>
+                    <h3>C/C++</h3>
+                    <div class="container-for-skills">
+                        <div class="skill-bar javascript" style="padding:0.6rem;"></div>
+                    </div>
+                    
+                </div>
+                <hr>
+            </div>
+
+
+        </section>
+        <div class="main-details">
+            <section class="work-experience pad-style-3">
+                <h1><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Work Experience</h1>
+                <div class="details">
+                    <h2>Gamer / Youtuber </h2>
+                    <h3><i class="fa fa-calandeer"></i>2019 - <span>Current</span></h3>
+                    <p>I have played many of the video games and I am always interested in SEO.</p>
+                </div>
+                <hr>
+                <div class="details">
+                    <h2>E-sports Athelete</h2>
+                    <h3><i class="fa fa-calandeer"></i>2022 - <span>Current</span></h3>
+                    <p style="text-transform:capitalize;">I AM PROFFESSIONAL GAMER AND ESPORTS ATHELETE 
+                        I HAVE REPRESENTED INDIA IN SOME UNOFFICIAL INTERNATIONAL TOURNAMENTS </p>
+                </div><div class="details">
+                    <h2>Graphic Designer / Designer</h2>
+                    <h3><i class="fa fa-calandeer"></i>2018 - <span>Current</span></h3>
+                    <p>I love to edit the videos and photos. Spent a lot of time editing and improving my Designing skills.</p>
+                </div><hr>
+            </section>
+
+            <section class="education pad-style-3 box">
+                <h1>Education</h1>
+                <div class="details">
+                    <h2 >10th </h2>
+                    <h3 style="font-weight:bold;"><i class="fa fa-calander"></i>Lotus School Parwanoo, Kumarhatti</h3>
+                    <!-- <p>Web Development! All I need to know in one place</p> -->
+                </div>
+                <hr>
+
+                <div class="details">
+                    <h2>10 + 2 <span style="font-size: 1rem;">Non-Med</span></h2>
+                    <h3 style="font-weight:bold;"><i class="fa fa-calander"></i>Govt Sen Sec School Parwanoo<span style="display:inline-block;font-size:1rem;">2019-2022</span></h3>
+                    <!-- <p>Masters Degree</p> -->
+                </div>
+                <hr>
+
+                <div class="details">
+                    <h2>BCA</h2>
+                    <h3 style="font-weight:bold;"><i class="fa fa-calander"></i>GC Solan,2020 - <span>Present</span></h3>
+                    <!-- <p>Bachelor Degree</p> -->
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+    <footer>
+        <p>Follow On Social Media</p>
+        <a href="https://www.facebook.com/"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+        <a href="https://www.instagram.com/p/ChBZa9OBBf0/?igshid=YzA2ZDJiZGQ="><i class="fa fa-instagram w3-hover-opacity"></i></a>
+    
+    </footer>
+
+
+</body>
+
+</html>
